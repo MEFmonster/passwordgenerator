@@ -18,7 +18,11 @@ def complexity():
     else:
         print("Вы ввели неизвестный режим")
         return
+    name = input("Введите название сервиса пароля")
     passwords = generatedpassword(lenght, chars)
+    with open('password.txt','w', encoding='utf-8') as f:
+         f.write(f"Сервис:{name}\nПароль:")
+         f.write(passwords)
     print(passwords)
 
 complexity()
